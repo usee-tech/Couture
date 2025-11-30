@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAN BABA COUTURE | Premium Fashion for Men & Women</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --accent-color: #F4A460;
+            --text-color: #333;
+            --light-color: #f8f8f8;
+            --dark-color: #222;
+            --error-color: #e74c3c;
+            --success-color: #2ecc71;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--dark-color);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        /* ABOUT SECTION */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* FOUNDER SECTION */
+        .founder-section {
+            background-color: #f9f9f9;
+        }
+
+        .founder-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .founder-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .founder-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .founder-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .founder-text {
+            flex: 1;
+        }
+
+        .founder-name {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .founder-title {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .founder-quote {
+            font-style: italic;
+            padding: 1.5rem;
+            background: white;
+            border-left: 4px solid var(--accent-color);
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .founder-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .founder-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .founder-social a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* GALLERY SECTION */
+        .gallery {
+            background-color: #f9f9f9;
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 300px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* PRODUCTS SECTION */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-weight: bold;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        /* SERVICES SECTION */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .gender-tag {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--dark-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        /* CONTACT SECTION */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--accent-color);
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 50%;
+            color: var(--primary-color);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            position: relative;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(244, 164, 96, 0.2);
+        }
+
+        .contact-form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .phone-input-group {
+            display: flex;
+            gap: 5px;
+        }
+
+        .country-code {
+            flex: 0 0 5px;
+        }
+
+        .phone-number {
+            flex: 1;
+        }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .form-group.error input,
+        .form-group.error textarea,
+        .form-group.error select {
+            border-color: var(--error-color);
+        }
+
+        .form-group.success input,
+        .form-group.success textarea,
+        .form-group.success select {
+            border-color: var(--success-color);
+        }
+
+        .success-message {
+            background-color: var(--success-color);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--primary-color);
+                width: 80%;
+                height: calc(100vh - 70px);
+                transition: 0.3s;
+                box-shadow: -5px 0 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                margin: 1rem 0;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content, .founder-content {
+                flex-direction: column;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .phone-input-group {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">DAN BABA <span>COUTURE</span></div>
+            <div class="hamburger" id="hamburger">☰</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#founder"><i class="fas fa-user"></i> Founder</a></li>
+                <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="#products"><i class="fas fa-shopping-bag"></i> Products</a></li>
+                <li><a href="#services"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>DAN BABA COUTURE</h1>
+            <p>Where Elegant Fashion Meets Tradition and Modern Style for Men & Women</p>
+            <a href="#gallery" class="btn"><i class="fas fa-eye"></i> View Gallery</a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>The Dan Baba Couture Story</h3>
+                    <p>Dan Baba Couture is a premium fashion brand specializing in high-quality, elegant clothing for both men and women. Since our establishment, we have been committed to excellence in design, quality, and cultural appreciation.</p>
+                    <p>Our workshop uses the finest materials and the expertise of our skilled artisans to create stunning pieces that meet your daily fashion needs while celebrating your unique style.</p>
+                    <p>Our mission is to bring you the finest clothing that honors your cultural heritage while keeping you fashionable and contemporary.</p>
+                </div>
+                <div class="about-image">
+                    <img src="0000" alt="Dan Baba Couture Store">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDER SECTION -->
+    <section id="founder" class="founder-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Founder</h2>
+            </div>
+            <div class="founder-content">
+                <div class="founder-image">
+                    <img src="0000" alt="Dan Baba - Founder">
+                </div>
+                <div class="founder-text">
+                    <h3 class="founder-name">Ibrahim Usman</h3>
+                    <p class="founder-title">Founder & Creative Director</p>
+                    <p>With over 15 years of experience in the fashion industry, Dan Baba is the visionary behind Dan Baba Couture. His passion for blending traditional Nigerian aesthetics with contemporary fashion trends has made him a respected name in the industry.</p>
+                    <p>Dan began his journey as an apprentice tailor in Kano, mastering the intricate art of traditional Nigerian garment making. His dedication to craftsmanship and eye for detail quickly earned him recognition, leading to the establishment of Dan Baba Couture in 2010.</p>
+                    <p>Under his leadership, the brand has grown from a small local workshop to a renowned fashion house serving clients across Nigeria and beyond.</p>
+                    
+                    <div class="founder-quote">
+                        <p>"Fashion is not just about clothing; it's about storytelling. Every stitch, every fabric, every design tells a story of our heritage, our culture, and our vision for the future. At Dan Baba Couture, we don't just create clothes - we create wearable art that celebrates identity and elegance."</p>
+                    </div>
+                    
+                    <p>Dan continues to personally oversee the creative direction of the brand, ensuring that every piece maintains the high standards of quality and artistry that have become synonymous with the Dan Baba Couture name.</p>
+                    
+                    <div class="founder-social">
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Gallery</h2>
+            </div>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="men"><i class="fas fa-male"></i> Men</button>
+                <button class="filter-btn" data-filter="women"><i class="fas fa-female"></i> Women</button>
+                <button class="filter-btn" data-filter="traditional"><i class="fas fa-gem"></i> Traditional</button>
+                <button class="filter-btn" data-filter="modern"><i class="fas fa-star"></i> Modern</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" data-category="men traditional">
+                    <img src="....." alt="Men Traditional Wear">
+                    <div class="gallery-overlay">
+                        <h3>Traditional Men's Attire</h3>
+                        <p>Elegant traditional outfits for special occasions</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" data-category="women traditional">
+                    <img src=" .." alt="Women Traditional Wear">
+                    <div class="gallery-overlay">
+                        <h3>Traditional Women's Wear</h3>
+                        <p>Beautiful cultural dresses for women</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item" data-category="men modern">
+                    <img src="0000" alt="Men Modern Fashion">
+                    <div class="gallery-overlay">
+                        <h3>Modern Men's Fashion</h3>
+                        <p>Contemporary styles for the modern man</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item" data-category="women modern">
+                    <img src="0000" alt="Women Modern Fashion">
+                    <div class="gallery-overlay">
+                        <h3>Modern Women's Fashion</h3>
+                        <p>Trendy outfits for fashion-forward women</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item" data-category="traditional">
+                    <img src="00000" alt="Traditional Accessories">
+                    <div class="gallery-overlay">
+                        <h3>Traditional Accessories</h3>
+                        <p>Cultural jewelry and accessories</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item" data-category="modern">
+                    <img src="0000" alt="Modern Accessories">
+                    <div class="gallery-overlay">
+                        <h3>Modern Accessories</h3>
+                        <p>Contemporary fashion accessories</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Free Delivery</h3>
+                    <p>Within Kano Metropolis</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Custom Tailoring</h3>
+                    <p>Perfect Fit Guaranteed</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>Best Materials Used</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Fast Service</h3>
+                    <p>Quick Turnaround Time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-male"></i></div>
+                    <h3>Men's Custom Tailoring</h3>
+                    <p>Professional custom tailoring services for men including suits, traditional wear, and modern outfits.</p>
+                    <div class="gender-tag"><i class="fas fa-male"></i> For Men</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-female"></i></div>
+                    <h3>Women's Fashion Design</h3>
+                    <p>Elegant custom designs for women including dresses, traditional outfits, and contemporary fashion.</p>
+                    <div class="gender-tag"><i class="fas fa-female"></i> For Women</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cut"></i></div>
+                    <h3>Custom Fitting & Alterations</h3>
+                    <p>Perfect fitting services and alterations for all types of clothing for both genders.</p>
+                    <div class="gender-tag"><i class="fas fa-venus-mars"></i> For Both</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> +234 912 572 1210</p>
+                        <p><i class="fas fa-envelope"></i> danbabacouture@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> No.96 court-road, Kano, Nigeria</p>
+                        <p><i class="fas fa-clock"></i> Mon - Sun: 9AM - 7PM</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+                    </div>
+                    
+                    <form id="contactForm">
+                        <div class="form-group" id="nameGroup">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name">
+                            <div class="error-message" id="nameError">Please enter your name</div>
+                        </div>
+                        
+                        <div class="form-group" id="emailGroup">
+                            <label for="email">Your Email *</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address">
+                            <div class="error-message" id="emailError">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div class="form-group" id="phoneGroup">
+                            <label for="phone">Your Phone Number *</label>
+                            <div class="phone-input-group">
+                                <select class="country-code" id="countryCode" name="countryCode">
+                                    <option value="+234">+234 (NG)</option>
+                                    <option value="+1">+1 (US)</option>
+                                    <option value="+44">+44 (UK)</option>
+                                    <option value="+33">+33 (FR)</option>
+                                    <option value="+49">+49 (DE)</option>
+                                    <option value="+91">+91 (IN)</option>
+                                    <option value="+86">+86 (CN)</option>
+                                    <option value="+81">+81 (JP)</option>
+                                    <option value="+7">+7 (RU)</option>
+                                    <option value="+55">+55 (BR)</option>
+                                </select>
+                                <input type="tel" class="phone-number" id="phone" name="phone" placeholder="Enter your phone number">
+                            </div>
+                            <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+                        </div>
+                        
+                        <div class="form-group" id="serviceGroup">
+                            <label for="service">Select Service *</label>
+                            <select id="service" name="service">
+                                <option value="">Choose a service</option>
+                                <option value="men">Men's Tailoring</option>
+                                <option value="women">Women's Fashion</option>
+                                <option value="alterations">Alterations</option>
+                                <option value="consultation">Fashion Consultation</option>
+                            </select>
+                            <div class="error-message" id="serviceError">Please select a service</div>
+                        </div>
+                        
+                        <div class="form-group" id="messageGroup">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your fashion needs"></textarea>
+                            <div class="error-message" id="messageError">Please enter your message</div>
+                        </div>
+                        
+                        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 DAN BABA COUTURE. All rights reserved. | Premium Fashion for Men & Women</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mobile Menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Gallery Filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Form validation and submission
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        
+        // Validation functions
+        function validateName() {
+            const name = document.getElementById('name').value.trim();
+            const nameGroup = document.getElementById('nameGroup');
+            const nameError = document.getElementById('nameError');
+            
+            if (name === '') {
+                nameGroup.classList.add('error');
+                nameGroup.classList.remove('success');
+                nameError.textContent = 'Please enter your name';
+                nameError.classList.add('show');
+                return false;
+            } else {
+                nameGroup.classList.remove('error');
+                nameGroup.classList.add('success');
+                nameError.classList.remove('show');
+                return true;
+            }
+        }
+        
+        function validateEmail() {
+            const email = document.getElementById('email').value.trim();
+            const emailGroup = document.getElementById('emailGroup');
+            const emailError = document.getElementById('emailError');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email === '') {
+                emailGroup.classList.add('error');
+                emailGroup.classList.remove('success');
+                emailError.textContent = 'Please enter your email address';
+                emailError.classList.add('show');
+                return false;
+            } else if (!emailRegex.test(email)) {
+                emailGroup.classList.add('error');
+                emailGroup.classList.remove('success');
+                emailError.textContent = 'Please enter a valid email address';
+                emailError.classList.add('show');
+                return false;
+            } else {
+                emailGroup.classList.remove('error');
+                emailGroup.classList.add('success');
+                emailError.classList.remove('show');
+                return true;
+            }
+        }
+        
+        function validatePhone() {
+            const countryCode = document.getElementById('countryCode').value;
+            const phone = document.getElementById('phone').value.trim();
+            const phoneGroup = document.getElementById('phoneGroup');
+            const phoneError = document.getElementById('phoneError');
+            const phoneRegex = /^[0-9\-\+\s\(\)]{7,15}$/;
+            
+            if (phone === '') {
+                phoneGroup.classList.add('error');
+                phoneGroup.classList.remove('success');
+                phoneError.textContent = 'Please enter your phone number';
+                phoneError.classList.add('show');
+                return false;
+            } else if (!phoneRegex.test(phone)) {
+                phoneGroup.classList.add('error');
+                phoneGroup.classList.remove('success');
+                phoneError.textContent = 'Please enter a valid phone number';
+                phoneError.classList.add('show');
+                return false;
+            } else {
+                phoneGroup.classList.remove('error');
+                phoneGroup.classList.add('success');
+                phoneError.classList.remove('show');
+                return true;
+            }
+        }
+        
+        function validateService() {
+            const service = document.getElementById('service').value;
+            const serviceGroup = document.getElementById('serviceGroup');
+            const serviceError = document.getElementById('serviceError');
+            
+            if (service === '') {
+                serviceGroup.classList.add('error');
+                serviceGroup.classList.remove('success');
+                serviceError.classList.add('show');
+                return false;
+            } else {
+                serviceGroup.classList.remove('error');
+                serviceGroup.classList.add('success');
+                serviceError.classList.remove('show');
+                return true;
+            }
+        }
+        
+        function validateMessage() {
+            const message = document.getElementById('message').value.trim();
+            const messageGroup = document.getElementById('messageGroup');
+            const messageError = document.getElementById('messageError');
+            
+            if (message === '') {
+                messageGroup.classList.add('error');
+                messageGroup.classList.remove('success');
+                messageError.classList.add('show');
+                return false;
+            } else {
+                messageGroup.classList.remove('error');
+                messageGroup.classList.add('success');
+                messageError.classList.remove('show');
+                return true;
+            }
+        }
+        
+        // Real-time validation
+        document.getElementById('name').addEventListener('blur', validateName);
+        document.getElementById('email').addEventListener('blur', validateEmail);
+        document.getElementById('phone').addEventListener('blur', validatePhone);
+        document.getElementById('service').addEventListener('change', validateService);
+        document.getElementById('message').addEventListener('blur', validateMessage);
+        
+        // Form submission
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate all fields
+                const isNameValid = validateName();
+                const isEmailValid = validateEmail();
+                const isPhoneValid = validatePhone();
+                const isServiceValid = validateService();
+                const isMessageValid = validateMessage();
+                
+                // If all fields are valid, submit the form
+                if (isNameValid && isEmailValid && isPhoneValid && isServiceValid && isMessageValid) {
+                    // Show success message
+                    successMessage.classList.add('show');
+                    
+                    // Reset form
+                    this.reset();
+                    
+                    // Remove success classes
+                    document.querySelectorAll('.form-group').forEach(group => {
+                        group.classList.remove('success');
+                    });
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.classList.remove('show');
+                    }, 5000);
+                }
+            });
+        }
+        
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
